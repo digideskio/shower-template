@@ -1,0 +1,47 @@
+// ------------------------------------------------------------------
+// Caption
+// ------------------------------------------------------------------
+// 1. Calculations ..... Font-size calculations
+// 2. Decoration ....... Global caption styling
+// 3. Contents ......... Caption’s contents
+// ------------------------------------------------------------------
+
+.caption {
+
+	// Calculations
+
+	& {
+		.for(@scale_factors); .-each(@scale) {
+			.scale(@scale, { font-size: @gap / @scale; });
+		}
+	}
+
+	// Decoration
+
+	.shadow(6px, 6px, 6px, 0.3);
+	.diagonal();
+
+	display:none;
+	margin-bottom:1em;
+	padding:1.02em 0 0.9em 1em;
+	width:100%;
+	background:@caption_background @diagonal no-repeat;
+
+	// Contents
+
+	h1 {
+		padding-bottom:0.28em;
+		color:@caption_heading_color;
+		font:1.17em/1 "Source Sans Pro", "VL Gothic", "Nanum Gothic", sans-serif;
+		font-weight:bold;
+		}
+	p {
+		color:@caption_text_color;
+		line-height:1;
+		font-size:0.58em;
+		}
+	a {
+		color:inherit;
+		}
+
+	}

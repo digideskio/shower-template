@@ -1,0 +1,144 @@
+// ------------------------------------------------------------------
+// Defaults
+// ------------------------------------------------------------------
+// 1. Sizes ............ Global layout and color variables
+//    - Width .......... Default slide width 1024 px
+//    - Height ......... Height calculated based on width and ratio
+//    - Gap ............ Gap between slides in List mode
+// 2. Colors ........... Global color variables
+// 3. Retina ........... Retina detection mixin
+// 4. Underliner ....... Mixin for drawing lines using gradient
+// 5. Scale ............ MQ generator based on slides scale factor
+// 6. Offscreen ........ Mixing for hiding things in accessible way
+// 7. Diagonal ......... Two-half gradient rotated by 135 degrees
+// 8. Shadows .......... Canonical Material Design shadows
+// ------------------------------------------------------------------
+
+// Sizes
+
+@width:1024px;
+@height:@width/@ratio;
+@gap:96px;
+@scale_factors: 4, 2, 1;
+
+// Colors
+
+@key_color:rgb(29, 205, 0);
+@key_background:mix(black, white, 90%);
+
+@slide_background:radial-gradient(circle, #222, black);
+@slide_background_color:@key_background;
+@slide_text_color:mix(black, white, 10%);
+@slide_heading_color:@slide_text_color;
+@slide_note_color:@slide_text_color;
+@slide_hyperlink_color:@key_color;
+@slide_marker_background:#FAFAC4;
+@slide_footer_background:mix(black, white, 95%);
+@slide_shout_color:@slide_text_color;
+@slide_shout_background:@key_background;
+
+@slide_number_color:mix(black, white, 40%);
+@slide_list_marker_color:@slide_number_color;
+@slide_quote_marker_color:@slide_number_color;
+@slide_table_color:@slide_number_color;
+
+@slide_code_color:@slide_text_color;
+@slide_code_inline_background:mix(black, white, 82%);
+@slide_code_linenum_color:@slide_number_color;
+@slide_code_important_marker_background:mix(black, red, 50%);
+@slide_code_important_marker_color:white;
+@slide_code_comment_marker_color:mix(black, white, 38%);
+
+@progress_foreground:@key_color;
+@progress_background:none;
+
+@back:@slide_text_color;
+
+@caption_heading_color:@slide_text_color;
+@caption_text_color:@slide_text_color;
+@caption_background:@key_background;
+
+@diagonal_color_1:mix(black, white, 90%);
+@diagonal_color_2:mix(black, white, 87%);
+
+@badge_background:white;
+@badge_color:#43A047;
+
+// Retina
+
+.retina(@rules) {
+	@media (min-resolution:2dppx) {
+		@rules();
+	}
+}
+
+// Underliner
+
+.underline(@color, @width) {
+	@a:@color @width;
+	@b:transparent @width;
+	background: linear-gradient(to top, @a, @b) repeat-x;
+}
+
+// Scale
+
+.scale(@scale, @rules) when (@scale = 4) {
+	@rules();
+}
+
+.scale(@scale, @rules) {
+	@media (min-width:2 * (@width / @scale) + (@gap / @scale) * 3) {
+		@rules();
+	}
+}
+
+// Offscreen
+
+.offscreen {
+	position:absolute;
+	clip:rect(0 0 0 0);
+	overflow:hidden;
+	margin:-1px;
+	padding:0;
+	width:1px;
+	height:1px;
+	border:none;
+}
+
+// Diagonal
+
+.diagonal() {
+ 	@diagonal: linear-gradient(
+ 		135deg, @diagonal_color_1 50%,
+ 		@diagonal_color_2 50%
+	)
+}
+
+.live-region {
+	display:none !important;
+}
+
+// Shadows
+
+.shadow(@x, @y, @blur, @alpha) {
+	-webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+	box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+	transition: box-shadow 0.2s;
+}
+
+// ............................................................
+// .for
+
+.for(@i, @n) {.-each(@i)}
+.for(@n)     when (isnumber(@n)) {.for(1, @n)}
+.for(@i, @n) when not (@i = @n)  {
+    .for((@i + (@n - @i) / abs(@n - @i)), @n);
+}
+
+// ............................................................
+// .for-each
+
+.for(@array)   when (default()) {.for-impl_(length(@array))}
+.for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
+.for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}

@@ -1,0 +1,44 @@
+// ------------------------------------------------------------------
+// Shout
+// ------------------------------------------------------------------
+// 1. Text ............. Positioning and font properties
+// 2. Link ............. Color and underline adjustments
+// 3. Back ............. Diagonal backdrop
+// ------------------------------------------------------------------
+
+.shout {
+
+	// Text
+
+	position:absolute;
+	top:50%;
+	left:0;
+	z-index:1;
+	padding-left:96px;
+	width:100%;
+	color:@slide_shout_color;
+	line-height:1.1;
+	font-size:112px;
+	transform:translateY(-50%);
+
+	// Link
+
+	a {
+		.underline(currentColor, 0.06em);
+		color:inherit;
+	}
+
+	// Back
+
+	&:after {
+		position:absolute;
+		top:-250%;
+		right:0;
+		bottom:-250%;
+		left:0;
+		z-index:-1;
+		.diagonal();
+		background:@slide_shout_background @diagonal no-repeat;
+		content:'';
+	}
+}
