@@ -4,52 +4,52 @@
 
 pre {
 
-	margin-bottom:1em;
-	counter-reset:code;
-	white-space:normal;
-	tab-size:4;
+  margin-bottom: 1em;
+  counter-reset: code;
+  white-space: normal;
+  tab-size: 4;
 
-	code {
+  code {
 
-		display:block;
-		padding:0;
-		background:none;
-		line-height:2;
-		white-space:pre;
-		font-size: 0.8em;
+    display: block;
+    padding: 0;
+    background: none;
+    line-height: 2;
+    white-space: pre;
+    font-size: 0.8em;
 
-		// Line numbers
+    // Line numbers
 
-		&:before {
-			position:absolute;
-			margin-left:-2em;
-			color:@slide_code_linenum_color;
-			counter-increment:code;
-			content:counter(code, decimal-leading-zero)'.';
-			}
+    &:before {
+      position: absolute;
+      margin-left: -2em;
+      color: @slide_code_linenum_color;
+      counter-increment: code;
+      content: counter(code, decimal-leading-zero) '.';
+    }
 
-		// Numberless
+    // Numberless
 
-		&:only-child:before {
-			content:'';
-			}
+    &:only-child:before {
+      content: '';
+    }
 
-		}
+  }
 
-	// Marked
+  // Marked
 
-	mark {
+  mark {
 
-		&.important {
-			background:@slide_code_important_marker_background;
-			color:@slide_code_important_marker_color;
-			}
-		&.comment {
-			padding:0;
-			background:none;
-			color:@slide_code_comment_marker_color;
-			}
+    &.important {
+      background: @slide_code_important_marker_background;
+      color: @slide_code_important_marker_color;
+    }
+    &.comment {
+      padding: 0;
+      background: none;
+      color: @slide_code_comment_marker_color;
+    }
 
-		}
+  }
 
-	}
+}

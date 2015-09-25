@@ -8,29 +8,26 @@
 
 .slide {
 
-	// Scale
-	transform-origin:0 0;
+  // Scale
+  transform-origin: 0 0;
 
-        & {
-		.for(@scale_factors); .-each(@scale) {
-			.scale(@scale, {
-				@magic:1 - 1 / @scale;
-				margin:0 (0 - @width * @magic) (@gap / @scale - @height * @magic) @gap / @scale;
-				transform:scale(1 / @scale);
-			});
-		}
-	}
+  & {
+    .for(@scale_factors);
+    .-each(@scale) {
+      .scale(@scale, { @magic: 1 - 1 / @scale; margin: 0 (0 - @width * @magic) (@gap / @scale - @height * @magic) @gap / @scale; transform: scale(1 / @scale); });
+    }
+  }
 
-	// Outline
-        &:target {
-					.shadow(24px, 24px, 24px, 0.6);
-        }
+  // Outline
+  &:target {
+    .shadow(24px, 24px, 24px, 0.6);
+  }
 
-	// Content
+  // Content
 
-	* {
-		pointer-events:none;
-	}
+  * {
+    pointer-events: none;
+  }
 
-	@import 'content/footer-list';
+  @import 'content/footer-list';
 }

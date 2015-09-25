@@ -8,34 +8,35 @@
 
 .badge {
 
-	// Calculations
-	& {
-		.for(@scale_factors); .-each(@scale) {
-		  .scale(@scale, { font-size: 40px / @scale; });
-	  }
-	}
+  // Calculations
+  & {
+    .for(@scale_factors);
+    .-each(@scale) {
+      .scale(@scale, { font-size: 40px / @scale; });
+    }
+  }
 
-	// Decoration
+  // Decoration
 
-	position:absolute;
-	top:1.5em;
-	right:1.5em;
-	display:none;
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em;
+  display: none;
 
-	// Link
+  // Link
 
-	a {
-		.shadow(6px, 6px, 6px, 0.3);
+  a {
+    .shadow(6px, 6px, 6px, 0.3);
 
-		display:table-cell;
-		width:6em;
-		height:6em;
-		border-radius:50%;
-		background:@badge_color;
-		color:@badge_background;
-		vertical-align:middle;
-		text-align:center;
-		line-height:1;
-		transform:rotate(-15deg);
-	}
+    display: table-cell;
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    background: @badge_color;
+    color: @badge_background;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 1;
+    transform: rotate(-15deg);
+  }
 }

@@ -9,48 +9,48 @@
 
 .slide {
 
-	position:relative;
-	z-index:1;
-	overflow:hidden;
-	padding:104px 112px 0 96px;
-	width:@width;
-	height:@height;
-	background:@slide_background;
-	line-height:2;
-	font-size:29px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 104px 112px 0 96px;
+  width: @width;
+  height: @height;
+  background: @slide_background;
+  line-height: 2;
+  font-size: 29px;
 
-	// Number
+  // Number
 
-	&:after {
-		position:absolute;
-		left:@width - 96px;
-		bottom:48px;
-		color:@slide_number_color;
-		counter-increment:slide;
-		content:counter(slide);
-		}
+  &:after {
+    position: absolute;
+    left: @width - 96px;
+    bottom: 48px;
+    color: @slide_number_color;
+    counter-increment: slide;
+    content: counter(slide);
+  }
 
-	// Content
+  // Content
 
-	@import 'content/basic';
-	@import 'content/inline';
-	@import 'content/quote';
-	@import 'content/lists';
-	@import 'content/table';
-	@import 'content/code';
-	@import 'content/footer';
+  @import 'content/basic';
+  @import 'content/inline';
+  @import 'content/quote';
+  @import 'content/lists';
+  @import 'content/table';
+  @import 'content/code';
+  @import 'content/footer';
 
-	// Modifiers
+  // Modifiers
 
-	@import 'modifiers/grid';
-	@import 'modifiers/black';
-	@import 'modifiers/white';
+  @import 'modifiers/grid';
+  @import 'modifiers/black';
+  @import 'modifiers/white';
 
-	// Elements
+  // Elements
 
-	@import 'elements/double';
-	@import 'elements/shout';
-	@import 'elements/cover';
-	@import 'elements/place';
+  @import 'elements/double';
+  @import 'elements/shout';
+  @import 'elements/cover';
+  @import 'elements/place';
 
 }

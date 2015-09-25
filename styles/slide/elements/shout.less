@@ -8,37 +8,37 @@
 
 .shout {
 
-	// Text
+  // Text
 
-	position:absolute;
-	top:50%;
-	left:0;
-	z-index:1;
-	padding-left:96px;
-	width:100%;
-	color:@slide_shout_color;
-	line-height:1.1;
-	font-size:112px;
-	transform:translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  padding-left: 96px;
+  width: 100%;
+  color: @slide_shout_color;
+  line-height: 1.1;
+  font-size: 112px;
+  transform: translateY(-50%);
 
-	// Link
+  // Link
 
-	a {
-		.underline(currentColor, 0.06em);
-		color:inherit;
-	}
+  a {
+    .underline(currentColor, 0.06em);
+    color: inherit;
+  }
 
-	// Back
+  // Back
 
-	&:after {
-		position:absolute;
-		top:-250%;
-		right:0;
-		bottom:-250%;
-		left:0;
-		z-index:-1;
-		.diagonal();
-		background:@slide_shout_background @diagonal no-repeat;
-		content:'';
-	}
+  &:after {
+    position: absolute;
+    top: -250%;
+    right: 0;
+    bottom: -250%;
+    left: 0;
+    z-index: -1;
+    .diagonal();
+    background: @slide_shout_background @diagonal no-repeat;
+    content: '';
+  }
 }

@@ -3,13 +3,10 @@
 // ------------------------------------------------------------------
 
 &.grid {
-	background-color: @slide_background_color;
-	background-image:url(../images/grid.png);
-	.retina({
-		background-image:url(../images/grid@2x.png);
-		background-size:@width auto;
-	});
+  background-color: @slide_background_color;
+  background-image: url(../images/grid.png);
+  .retina({ background-image: url(../images/grid@2x.png); background-size: @width auto; });
 
-	// Crisp guides
-	image-rendering:pixelated;
+  // Crisp guides
+  image-rendering: pixelated;
 }

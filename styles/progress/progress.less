@@ -4,18 +4,18 @@
 
 .progress {
 
-	position:absolute;
-	bottom:0;
-	left:0;
-	z-index:1;
-	display:none;
-	height:2px;
-	background:@progress_foreground;
-	transition:width 0.2s linear;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+  height: 2px;
+  background: @progress_foreground;
+  transition: width 0.2s linear;
 
-	// Back
+  // Back
 
-	clip:rect(0 @width 8px 0);
-	box-shadow:@width/2 0 0 @width/2 @progress_background;
+  clip: rect(0 @width 8px 0);
+  box-shadow: @width/2 0 0 @width/2 @progress_background;
 
-	}
+}

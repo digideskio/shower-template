@@ -4,43 +4,45 @@
 
 ol, ul {
 
-	margin-bottom:1em;
-	counter-reset:list;
+  margin-bottom: 1em;
+  counter-reset: list;
 
-	li {
+  li {
 
-		page-break-inside:avoid;
-		text-indent:-2em;
+    page-break-inside: avoid;
+    text-indent: -2em;
 
-		// Marker
+    // Marker
 
-		&:before {
-			display:inline-block;
-			width:2em;
-			color:@slide_list_marker_color;
-			text-align:right;
-			}
+    &:before {
+      display: inline-block;
+      width: 2em;
+      color: @slide_list_marker_color;
+      text-align: right;
+    }
 
-		}
+  }
 
-	ol, ul {
-		margin-bottom:0;
-		margin-left:2em;
-		}
+  ol, ul {
+    margin-bottom: 0;
+    margin-left: 2em;
+  }
 
-	}
+}
 
 // Markers
 
 ul > li:before {
-	padding-right:0.5em;
-	content:'•';
-	}
+  padding-right: 0.5em;
+  content: '•';
+}
+
 ul > li:lang(ru):before {
-	content:'—';
-	}
+  content: '—';
+}
+
 ol > li:before {
-	padding-right:0.4em;
-	counter-increment:list;
-	content:counter(list)'.';
-	}
+  padding-right: 0.4em;
+  counter-increment: list;
+  content: counter(list) '.';
+}
