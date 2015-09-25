@@ -16,7 +16,7 @@ $ python2 -m SimpleHTTPServer
 
 ## How to customize
 
-You can customize the colors and backgrounds by modifying `styles/_defaults.less`.
+You can customize the colors and backgrounds by modifying [`styles/_defaults.less`](https://github.com/trustin/shower-template/blob/master/styles/_defaults.less).
 
 ## How to print or to export to PDF
 
