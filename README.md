@@ -6,6 +6,10 @@ This is a dark-themed presentation template based on [Shower](http://shwr.me/), 
 
 It looks like [this](https://speakerdeck.com/trustin/ts-dark-theme-for-shower) when exported to PDF.
 
+### How to customize
+
+You can customize the colors and backgrounds by modifying the variables in [`styles/_defaults.less`](https://github.com/trustin/shower-template/blob/master/styles/_defaults.less). You might need some knowledge about [LESS](http://lesscss.org/).
+
 ### How to open
 
 Run an HTTP server and open the sample page at [http://localhost:8000/sample.html](http://localhost:8000/sample.html):
@@ -13,10 +17,6 @@ Run an HTTP server and open the sample page at [http://localhost:8000/sample.htm
 ```bash
 $ python2 -m SimpleHTTPServer
 ```
-
-### How to customize
-
-You can customize the colors and backgrounds by modifying [`styles/_defaults.less`](https://github.com/trustin/shower-template/blob/master/styles/_defaults.less).
 
 ### How to print or to export to PDF
 
