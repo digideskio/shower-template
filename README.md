@@ -17,3 +17,5 @@ Run an HTTP server and open the sample page at [http://localhost:8000/sample.htm
 $ python2 -m SimpleHTTPServer
 ```
 
+You can customize the colors and backgrounds by modifying `styles/_defaults.less`.
+
