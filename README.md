@@ -1,12 +1,12 @@
-# T's Dark Shower Template
+## T's Dark Shower Template
 
 This is a dark-themed presentation template based on [Shower](http://shwr.me/), an awesome HTML-based presentation engine by [Vadim Makeev](https://github.com/pepelsbey).
 
-## Demo
+### Demo
 
 It looks like [this](https://speakerdeck.com/trustin/ts-dark-theme-for-shower) when exported to PDF.
 
-## How to open
+### How to open
 
 Run an HTTP server and open the sample page at [http://localhost:8000/sample.html](http://localhost:8000/sample.html):
 
@@ -14,16 +14,16 @@ Run an HTTP server and open the sample page at [http://localhost:8000/sample.htm
 $ python2 -m SimpleHTTPServer
 ```
 
-## How to customize
+### How to customize
 
 You can customize the colors and backgrounds by modifying [`styles/_defaults.less`](https://github.com/trustin/shower-template/blob/master/styles/_defaults.less).
 
-## How to print or to export to PDF
+### How to print or to export to PDF
 
 You can use your favorite modern browser. Read [the Shower wiki](https://github.com/shower/shower/wiki/Print)
 for more information.
 
-## Changes I've made
+### Changes I've made
 
 This template is basically the combination of:
 
