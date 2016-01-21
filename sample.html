@@ -6,6 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="images/shower.svg" sizes="any">
+  <link rel="stylesheet" type="text/css" href="lib/highlight.darkula.min.css">
   <link rel="stylesheet/less" type="text/css" href="styles/screen-16x10.less">
 </head>
 <body class="shower list">
@@ -208,17 +209,17 @@
 </section>
 <section class="slide">
   <h2>Plain Code Listing</h2>
-    <pre><code>&lt;html lang="en"&gt;
+    <pre><code class="html">&lt;html lang="en"&gt;
 <mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark>
-&lt;title&gt;Shower&lt;/title&gt;
-&lt;meta charset="<mark class="important">UTF-8</mark>"&gt;
-&lt;link rel="stylesheet" href="screen.css"&gt;
-&lt;script src="script.js"&gt;&lt;/script&gt;
+  &lt;title&gt;Shower&lt;/title&gt;
+  &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;
+  &lt;link rel="stylesheet" href="screen.css"&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
 <mark>&lt;/head&gt;</mark></code></pre>
 </section>
 <section class="slide">
   <h2>Numbered Code Listing</h2>
-    <pre>
+    <pre class="html">
       <code>&lt;html lang="en"&gt;</code>
       <code><mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark></code>
       <code>  &lt;title&gt;Shower&lt;/title&gt;</code>
@@ -284,6 +285,13 @@
 <script src="lib/less.nocache.js" type="text/javascript"></script>
 <script src="lib/less.min.js" type="text/javascript"></script>
 <script src="lib/shower.js" type="text/javascript"></script>
+<script src="lib/highlight.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  hljs.configure({
+    tabReplace: '    '
+  });
+  hljs.initHighlightingOnLoad();
+</script>
 <!-- Copyright © 2015 Yours Truly, Famous Inc. -->
 </body>
 </html>
